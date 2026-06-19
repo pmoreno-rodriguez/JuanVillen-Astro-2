@@ -8,7 +8,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  base: "/astro_jv/",
+  base: process.env.BASE_URL || "/",
   site: "https://juanvillen.es/",
   vite: {
     plugins: [tailwindcss()],
