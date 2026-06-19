@@ -1,30 +1,38 @@
 ---
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import { BASE_URL } from "../../utils/base";
 
 const { data, id } = Astro.props;
+
+// Si data.thumbnail es una ruta de texto (string) que empieza por "/",
+// la prefijamos. Si es un objeto de imagen importado, no es necesario.
+const thumbnailSrc =
+    typeof data.thumbnail === "string"
+        ? `${BASE_URL}${data.thumbnail.replace(/^\//, "")}`
+        : data.thumbnail;
 ---
 
 <article class="">
-  <a href={`/service/${id}`}>
-    <Image
-      src={data.thumbnail}
-      alt={data.title}
-      width="400"
-      height="200"
-      format="webp"
-      quality={45}
-      class="w-full h-auto aspect-2/1 rounded-xl object-cover mb-4"
-    />
+    <a href={`${BASE_URL}service/${id}`}>
+        <Image
+            src={thumbnailSrc}
+            alt={data.title}
+            width="400"
+            height="200"
+            format="webp"
+            quality={45}
+            class="w-full h-auto aspect-2/1 rounded-xl object-cover mb-4"
+        />
 
-    <h3 class="font-semibold text-xl sm:text-2xl my-4">{data.title}</h3>
-    <p class="mb-4 mt-4 text-sm sm:text-base">{data.description}</p>
+        <h3 class="font-semibold text-xl sm:text-2xl my-4">{data.title}</h3>
+        <p class="mb-4 mt-4 text-sm sm:text-base">{data.description}</p>
 
-    <button
-      class="btn btn-outline hover:bg-main hover:text-white hover:border-main rounded-lg"
-    >
-      Book Now
-      <Icon name="lucide:arrow-up-right" size={16} />
-    </button>
-  </a>
+        <button
+            class="btn btn-outline hover:bg-main hover:text-white hover:border-main rounded-lg"
+        >
+            Book Now
+            <Icon name="lucide:arrow-up-right" size={16} />
+        </button>
+    </a>
 </article>

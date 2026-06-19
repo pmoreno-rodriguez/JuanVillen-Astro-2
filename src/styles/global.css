@@ -2,8 +2,10 @@
 @plugin "daisyui";
 
 @theme {
-    --color-main: #35864C; /* #36B864 */
-    --color-dark: #111D15;
+    --color-main: #ad1313; /* #36B864 */
+    --color-dark: #111d15;
+    --font-sans: var(--font-lato), sans-serif;
+    --font-heading: var(--font-raleway), sans-serif;
 }
 
 .container {
@@ -25,6 +27,16 @@
 }
 
 @layer base {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h4,
+    .h5 {
+        font-family: var(--font-heading);
+    }
     h1 {
         @apply font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[52px] mb-3 leading-[1.2];
     }
@@ -37,11 +49,13 @@
         @apply font-bold sm:font-semibold mb-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl;
     }
 
-    h4, .h4 {
+    h4,
+    .h4 {
         @apply font-semibold mb-3 text-lg sm:text-xl md:text-2xl lg:text-3xl;
     }
 
-    h5, .h5 {
+    h5,
+    .h5 {
         @apply font-semibold mb-3 text-base sm:text-lg md:text-xl lg:text-2xl;
     }
 
@@ -62,7 +76,11 @@
 }
 
 .post {
-    h2, h3, h4, h5, h6 {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         @apply mt-4 mb-3 font-bold;
     }
 
@@ -70,7 +88,8 @@
         @apply my-3;
     }
 
-    ol, ul {
+    ol,
+    ul {
         @apply pl-4 grid gap-3 my-3;
     }
 
@@ -83,18 +102,17 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
+    from {
+        opacity: 0;
+    }
 
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 .fadeIn {
-  animation-name: fadeIn;
-
+    animation-name: fadeIn;
 }
 
 .breadcrumbs {

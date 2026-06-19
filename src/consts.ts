@@ -1,33 +1,33 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'ProCleaning';
-export const SITE_DESCRIPTION = 'Specialized, efficient, and thorough cleaning services';
-
+export const SITE_TITLE = "JuanVillen";
+export const SITE_DESCRIPTION = "Narración Oral Profesional";
+const BASE_URL = import.meta.env.BASE_URL;
 
 export const NAV_MENU = [
-    {
-        url: "/",
-        title: "Home"
-    },
-    {
-        url: "#",
-        title: "About us"
-    },
-    {
-        url: "/service",
-        title: "Service"
-    },
-    {
-        url: "/team",
-        title: "Team"
-    },
-    {
-        url: "/blog",
-        title: "Blog"
-    },
-     {
-        url: "/contact",
-        title: "Contact"
-    }
+  {
+    url: `${BASE_URL}`,
+    title: "Inicio",
+  },
+  {
+    url: "#",
+    title: "Quién soy",
+  },
+  {
+    url: `${BASE_URL}service`,
+    title: "Sesiones",
+  },
+  {
+    url: `${BASE_URL}team`,
+    title: "Team",
+  },
+  {
+    url: `${BASE_URL}blog`,
+    title: "Blog",
+  },
+  {
+    url: `${BASE_URL}contact`,
+    title: "Contacto",
+  },
 ];
